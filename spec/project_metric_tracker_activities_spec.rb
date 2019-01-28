@@ -31,4 +31,16 @@ RSpec.describe ProjectMetricTrackerActivities do
     end
   end
 
+  context 'data generator' do
+    it 'should generate fake data' do
+      expect(described_class.fake_data.length).to eql(3)
+      expect(described_class.fake_data.first).to have_key(:image)
+      expect(described_class.fake_data.first).to have_key(:score)
+    end
+
+    it 'should set image data correctly' do
+      image = described_class.fake_data.first[:image]
+      expect(image[:data][:activities]).not_to be_nil
+    end
+  end
 end

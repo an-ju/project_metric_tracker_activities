@@ -1,4 +1,5 @@
 require "project_metric_tracker_activities/version"
+require 'project_metric_tracker_activities/data_generator'
 require 'project_metric_base'
 require 'faraday'
 
