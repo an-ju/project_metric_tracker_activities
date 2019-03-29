@@ -18,12 +18,12 @@ class ProjectMetricTrackerActivities
   end
 
   def score
-    @tracker_activities.length
+    story_transitions.length
   end
 
   def image
     { chartType: 'tracker_activities',
-      data: { activities: @tracker_activities }}
+      data: { activities: @tracker_activities, transitions: story_transitions }}
   end
 
   def obj_id
@@ -32,14 +32,33 @@ class ProjectMetricTrackerActivities
 
   private
 
+  # Activities within the last 2 weeks.
   def tracker_activities
-    resp = @conn.get("projects/#{@project}/activity?limit=1000&occurred_after=#{(Time.now - 3*60*60*24).iso8601}")
+    resp = @conn.get("projects/#{@project}/activity?limit=1000&occurred_after=#{(Time.now - 14*60*60*24).iso8601}")
     @tracker_activities = JSON.parse(resp.body, symbolize_names: true)
     next_ind = next_page(resp)
     while next_ind.positive? do
-      resp = @conn.get("projects/#{@project}/activity?limit=1000&offset=#{next_ind}&occurred_after=#{(Time.now - 3*60*60*24).iso8601}")
+      resp = @conn.get("projects/#{@project}/activity?limit=1000&offset=#{next_ind}&occurred_after=#{(Time.now - 14*60*60*24).iso8601}")
       @tracker_activities += JSON.parse(resp.body, symbolize_names: true)
       next_ind = next_page(resp)
+    end
+  end
+
+  def story_transitions
+    @tracker_activities.inject([]) do |transitions, activity|
+      activity[:changes].each do |update|
+        next unless update[:change_type].eql?('update') && update[:new_values].key?(:current_state)
+
+        transition = { kind: 'story_transition',
+                       state: update[:new_values][:current_state],
+                       story_id: update[:id],
+                       project_id: activity[:project][:id],
+                       project_version: activity[:project_version],
+                       occurred_at: activity[:occurred_at],
+                       performed_by_id: activity[:performed_by][:id] }
+        transitions.push(transition)
+      end
+      transitions
     end
   end
 
