@@ -41,7 +41,8 @@ RSpec.describe ProjectMetricTrackerActivities do
 
     it 'should set image data correctly' do
       image = described_class.fake_data.first[:image]
-      expect(image[:data][:activities]).not_to be_nil
+      expect(image[:data][:activities]).not_to be_empty
+      expect(image[:data][:transitions]).not_to be_empty
     end
   end
 end

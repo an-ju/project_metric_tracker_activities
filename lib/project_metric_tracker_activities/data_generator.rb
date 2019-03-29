@@ -6,7 +6,8 @@ class ProjectMetricTrackerActivities
   def self.fake_metric(num_act)
     { score: num_act,
       image: { chartType: 'tracker_activities',
-               data: { activities: activities(num_act) } } }
+               data: { activities: activities(num_act),
+                       transitions: transitions(num_act) } } }
   end
 
   def self.activities(num_act)
@@ -756,6 +757,354 @@ class ProjectMetricTrackerActivities
                 "initials": "AJ"
             },
             "occurred_at": "2019-01-28T00:37:02Z"
+        }
+    ]
+    lst[0..num_act]
+  end
+
+  def self.transitions(num_act)
+    lst = [
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 551,
+            "project_id": 99,
+            "project_version": 4,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 552,
+            "project_id": 99,
+            "project_version": 5,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "accepted",
+            "story_id": 553,
+            "project_id": 99,
+            "project_version": 6,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 554,
+            "project_id": 99,
+            "project_version": 7,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 555,
+            "project_id": 99,
+            "project_version": 8,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 556,
+            "project_id": 99,
+            "project_version": 9,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 557,
+            "project_id": 99,
+            "project_version": 10,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "accepted",
+            "story_id": 558,
+            "project_id": 99,
+            "project_version": 11,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 559,
+            "project_id": 99,
+            "project_version": 12,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 560,
+            "project_id": 99,
+            "project_version": 13,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 561,
+            "project_id": 99,
+            "project_version": 14,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 562,
+            "project_id": 99,
+            "project_version": 15,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 563,
+            "project_id": 99,
+            "project_version": 16,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 564,
+            "project_id": 99,
+            "project_version": 17,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 103
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 565,
+            "project_id": 99,
+            "project_version": 18,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 103
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 566,
+            "project_id": 99,
+            "project_version": 19,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 104
+        },
+        {
+            "kind": "story_transition",
+            "state": "unscheduled",
+            "story_id": 567,
+            "project_id": 99,
+            "project_version": 20,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 104
+        },
+        {
+            "kind": "story_transition",
+            "state": "started",
+            "story_id": 554,
+            "project_id": 99,
+            "project_version": 29,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "finished",
+            "story_id": 554,
+            "project_id": 99,
+            "project_version": 30,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "delivered",
+            "story_id": 554,
+            "project_id": 99,
+            "project_version": 31,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "started",
+            "story_id": 563,
+            "project_id": 99,
+            "project_version": 32,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "finished",
+            "story_id": 563,
+            "project_id": 99,
+            "project_version": 33,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "delivered",
+            "story_id": 563,
+            "project_id": 99,
+            "project_version": 34,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "accepted",
+            "story_id": 554,
+            "project_id": 99,
+            "project_version": 35,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "accepted",
+            "story_id": 563,
+            "project_id": 99,
+            "project_version": 36,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "started",
+            "story_id": 560,
+            "project_id": 99,
+            "project_version": 44,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "finished",
+            "story_id": 560,
+            "project_id": 99,
+            "project_version": 45,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "delivered",
+            "story_id": 560,
+            "project_id": 99,
+            "project_version": 46,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "accepted",
+            "story_id": 560,
+            "project_id": 99,
+            "project_version": 47,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "started",
+            "story_id": 556,
+            "project_id": 99,
+            "project_version": 48,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "started",
+            "story_id": 559,
+            "project_id": 99,
+            "project_version": 49,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unstarted",
+            "story_id": 561,
+            "project_id": 99,
+            "project_version": 50,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "unstarted",
+            "story_id": 566,
+            "project_id": 99,
+            "project_version": 51,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "finished",
+            "story_id": 559,
+            "project_id": 99,
+            "project_version": 52,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "delivered",
+            "story_id": 559,
+            "project_id": 99,
+            "project_version": 53,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 102
+        },
+        {
+            "kind": "story_transition",
+            "state": "rejected",
+            "story_id": 559,
+            "project_id": 99,
+            "project_version": 54,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
+        },
+        {
+            "kind": "story_transition",
+            "state": "unstarted",
+            "story_id": 552,
+            "project_id": 99,
+            "project_version": 55,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 100
+        },
+        {
+            "kind": "story_transition",
+            "state": "unstarted",
+            "story_id": 555,
+            "project_id": 99,
+            "project_version": 56,
+            "occurred_at": "2019-03-26T12:00:00Z",
+            "performed_by_id": 101
         }
     ]
     lst[0..num_act]
